@@ -180,7 +180,7 @@ fieldset.collapse.in#dashboard_form {
 }
 
 fieldset.collapse.in#details {
-  min-height: 202px;
+  min-height: 390px;
 }
 
 fieldset.collapse.in#metrics_graph_form {
@@ -229,7 +229,7 @@ fieldset.collapse.in#metrics_graph_form {
 }
 
 div.graphs {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .graphs div.row, .dashboards div.row {
@@ -341,8 +341,12 @@ span.graph img.view {
   width: 400px;
 }
 
-.info-wrapper, .description-wrapper {
+.info-wrapper, .titleLeft-wrapper, .titleRight-wrapper, .description-wrapper {
   margin: 12px 0 22px 30px;
+}
+
+.ymaxLeft-wrapper, .ymaxRight-wrapper {
+    margin: 12px 0 22px 0px;
 }
 
 .tags-wrapper, .settings-wrapper {
@@ -355,7 +359,7 @@ span.graph img.view {
   padding-right: 10px;
 }
 
-.info-wrapper label, .description-wrapper label, .tags-wrapper label, .settings-wrapper label, #composer_modal label {
+.info-wrapper label, .titleLeft-wrapper label, .titleRight-wrapper label, .ymaxLeft-wrapper label, .ymaxRight-wrapper label, .description-wrapper label, .tags-wrapper label, .settings-wrapper label, #composer_modal label {
   font-size: 0.9em;
   font-weight: bold;
 }
@@ -364,7 +368,7 @@ span.graph img.view {
   color: rgba(51, 51, 51, 0.55);
 }
 
-.description-wrapper span#description span#changeme, .tags-wrapper .tags span#changeme {
+.titleLeft-wrapper span#titleLeft span#changeme, .titleRight-wrapper span#titleRight span#changeme, .ymaxLeft-wrapper span#ymaxLeft span#changeme, .ymaxRight-wrapper span#ymaxRight span#changeme, .description-wrapper span#description span#changeme, .tags-wrapper .tags span#changeme {
   font-family: "HelveticaNeue-UltraLight";
   font-size: 1.3em;
   font-style: italic;
@@ -372,15 +376,15 @@ span.graph img.view {
   color: #999;
 }
 
-.description-wrapper span#description {
+.titleLeft-wrapper span#titleLeft, .titleRight-wrapper span#titleRight, .ymaxLeft-wrapper span#ymaxLeft, .ymaxRight-wrapper span#ymaxRight, .description-wrapper span#description {
   display: block;
 }
 
-.description-wrapper a {
+.titleLeft-wrapper a, .titleRight-wrapper a, .ymaxLeft-wrapper a, .ymaxRight-wrapper a, .description-wrapper a {
   margin-bottom: 8px;
 }
 
-.description-wrapper a.description_submit {
+.titleLeft-wrapper a.titleLeft_submit, .titleRight-wrapper a.titleRight_submit, .ymaxLeft-wrapper a.ymaxLeft_submit, .ymaxRight-wrapper a.ymaxRight_submit, .description-wrapper a.description_submit {
   margin-left: 15px;
 }
 
@@ -429,15 +433,27 @@ span.graph img.view {
   margin-right: 30px;
 }
 
-.settings .line_mode.btn-group { margin-top: 26px; }
-.settings .area_mode.btn-group { margin-top: 71px; }
-.settings .log_mode.btn-group { margin-top: 116px; }
-.settings .null_mode.btn-group { margin-top: 161px; }
+.settings .graph_type.btn-group { margin-top: 26px; }
+.settings .line_mode.btn-group { margin-top: 71px; }
+.settings .area_mode.btn-group { margin-top: 116px; }
+.settings .pie_mode.btn-group { margin-top: 161px; }
+.settings .log_mode.btn-group { margin-top: 206px; }
+.settings .null_mode.btn-group { margin-top: 251px; }
+.settings .hide_legend.btn-group { margin-top: 296px; margin-right: 190px; }
+.settings .hide_grid.btn-group { margin-top: 296px; }
+.settings .hide_yaxis.btn-group { margin-top: 341px; margin-right: 190px; }
+.settings .hide_axes.btn-group { margin-top: 341px; }
 
-.settings .line_mode.btn-group button.line_mode.btn.disabled { width: 100px; }
-.settings .area_mode.btn-group button.area_mode.btn.disabled { width: 128px; }
-.settings .log_mode.btn-group button.log_mode.btn.disabled { width: 182px; }
-.settings .null_mode.btn-group button.null_mode.btn.disabled { width: 238px; }
+.settings .graph_type.btn-group button.graph_type.btn.disabled { width: 247px; }
+.settings .line_mode.btn-group button.line_mode.btn.disabled { width: 118px; }
+.settings .area_mode.btn-group button.area_mode.btn.disabled { width: 146px; }
+.settings .pie_mode.btn-group button.pie_mode.btn.disabled { width: 108px; }
+.settings .log_mode.btn-group button.log_mode.btn.disabled { width: 200px; }
+.settings .null_mode.btn-group button.null_mode.btn.disabled { width: 256px; }
+.settings .hide_legend.btn-group button.hide_legend.btn.disabled { width: 96px; }
+.settings .hide_grid.btn-group button.hide_grid.btn.disabled { width: 82px; }
+.settings .hide_axes.btn-group button.hide_axes.btn.disabled { width: 82px; }
+.settings .hide_yaxis.btn-group button.hide_yaxis.btn.disabled { width: 96px; }
 
 .modal.large {
   width: 800px;

@@ -38,6 +38,8 @@
   .modal-footer
     %button{ :class => "btn", :"data-dismiss" => "modal", :"aria-hidden" => true } Cancel
     %button{ :class => "targets_submit btn btn-primary" } Update Targets
+.graphs
+  .row
 .accordion-group
   / Graph details
   %fieldset#details{ :class => "collapse" }
@@ -54,15 +56,31 @@
               %label{ :for => "created_at" } Created:
             %td
               %span#created_at
+      .titleLeft-wrapper
+        %label{ :for => "titleLeft" } Left Title:
+        %span{ :class => "closed", :id => "titleLeft" }
+      .titleRight-wrapper
+        %label{ :for => "titleRight" } Right Title:
+        %span{ :class => "closed", :id => "titleRight" }
       .description-wrapper
         %label{ :for => "description" } Description:
         %span{ :class => "closed", :id => "description" }
     .tags-wrapper
       %label{ :for => "tags" } Tags:
       .tags
+      .ymaxLeft-wrapper
+        %label{ :for => "ymaxLeft" } Left Y-Axis Max:
+        %span{ :class => "closed", :id => "ymaxLeft" }
+      .ymaxRight-wrapper
+        %label{ :for => "ymaxRight" } Right Y-Axis Max:
+        %span{ :class => "closed", :id => "ymaxRight" }
     .settings-wrapper
       /%label{ :for => "settings" } Advanced Settings:
       .settings
+        .graph_type.btn-group
+          %button{ :class => "graph_type btn disabled" } Graph Type
+          %button{ :class => "graph_type btn active", :name => 1, :value => "line" } line
+          %button{ :class => "graph_type btn", :name => 2, :value => "pie" } pie
         .line_mode.btn-group
           %button{ :class => "line_mode btn disabled" } Line Mode
           %button{ :class => "line_mode btn active", :name => 1, :value => "slope" } slope
@@ -74,6 +92,11 @@
           %button{ :class => "area_mode btn", :name => 2, :value => "first" } first
           %button{ :class => "area_mode btn", :name => 3, :value => "all" } all
           %button{ :class => "area_mode btn", :name => 4, :value => "stacked" } stacked
+        .pie_mode.btn-group
+          %button{ :class => "pie_mode btn disabled" } Pie Mode
+          %button{ :class => "pie_mode btn active", :name => 1, :value => "average" } average
+          %button{ :class => "pie_mode btn", :name => 2, :value => "maximum" } maximum
+          %button{ :class => "pie_mode btn", :name => 3, :value => "minimum" } minimum
         .log_mode.btn-group
           %button{ :class => "log_mode btn disabled" } Logarithmic Base
           %button{ :class => "log_mode btn active", :name => 1, :value => "0" } off
@@ -82,8 +105,31 @@
           %button{ :class => "log_mode btn", :name => 4, :value => "e" } e
         .null_mode.btn-group
           %button{ :class => "null_mode btn disabled" } Draw Nulls as Zeroes?
-          %button{ :class => "null_mode btn", :name => 1, :value => "off" } off
-          %button{ :class => "null_mode btn active", :name => 2, :value => "on" } on
+          %button{ :class => "null_mode btn", :name => 1, :value => "false" } off
+          %button{ :class => "null_mode btn active", :name => 2, :value => "true" } on
+        %table
+          %tr
+            %td
+              .hide_legend.btn-group
+                %button{ :class => "hide_legend btn disabled" } Hide Legend
+                %button{ :class => "hide_legend btn active", :name => 1, :value => "false" } off
+                %button{ :class => "hide_legend btn", :name => 2, :value => "true" } on
+            %td
+              .hide_grid.btn-group
+                %button{ :class => "hide_grid btn disabled" } Hide Grid
+                %button{ :class => "hide_grid btn active", :name => 1, :value => "false" } off
+                %button{ :class => "hide_grid btn", :name => 2, :value => "true" } on
+          %tr
+            %td
+              .hide_yaxis.btn-group
+                %button{ :class => "hide_yaxis btn disabled" } Hide Y-Axis
+                %button{ :class => "hide_yaxis btn active", :name => 1, :value => "false" } off
+                %button{ :class => "hide_yaxis btn", :name => 2, :value => "true" } on
+            %td
+              .hide_axes.btn-group
+                %button{ :class => "hide_axes btn disabled" } Hide Axes
+                %button{ :class => "hide_axes btn active", :name => 1, :value => "false" } off
+                %button{ :class => "hide_axes btn", :name => 2, :value => "true" } on
   / Forms for creating / adding-to dashboards
   %fieldset#dashboard_form{ :class => "collapse" }
     #dashboard_select
@@ -99,8 +145,6 @@
             %input{ :class => "dashboard_name span3", :id => "name", :name => "name", :placeholder => "Dashboard Name" }
           %li
             %button{ :class => "dashboard_submit btn btn-primary", :name => "submit", :type => "submit" } Create Dashboard
-.graphs
-  .row
 %script{ :type => "text/javascript", :src => "/js/graphs.js" }
 %script{ :type => "text/javascript", :src => "/js/profile-graph.js" }
 %script{ :type => "text/javascript", :src => "/js/render-common.js" }
