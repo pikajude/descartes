@@ -456,14 +456,24 @@ span.graph img.view {
 .settings .hide_yaxis.btn-group button.hide_yaxis.btn.disabled { width: 96px; }
 
 .modal.large {
-  width: 800px;
-  margin-left: -400px;
+  width: 1170px;
+  margin-left: -585px;
+  height: 90%;
+  top: 40%;
 }
 
-#composer_modal .modal-body { max-height: 450px; }
+img.span8 {
+    width: 1130px;
+}
+
+textarea.span8 {
+  width: 1130px;
+}
+
+#composer_modal .modal-body { max-height: 550px; }
 
 #composer_modal img { margin: 20px 0; }
-#composer_modal textarea { height: 150px; }
+#composer_modal textarea { height: 334px; }
 
 div.metrics-cache-status {
   float: left;
