@@ -8,7 +8,8 @@ module Descartes
         status 200
         Dashboard.filter(:enabled => true).where(:uuid => favorites).to_json
       else
-        haml :chartroulette, :locals => { :title => 'Descartes - Chartroulette' }
+        fullscreen = params[:fullscreen] === 'true' ? true : false
+        haml :chartroulette, :locals => { :title => 'Descartes - Chartroulette', :fullscreen => fullscreen }
       end
     end
   end

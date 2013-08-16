@@ -1,5 +1,9 @@
-.header
-  %h1 Chartroulette
+- unless fullscreen
+  .header
+    %h1 Chartroulette
+- else
+  .header
+    %h1.fullscreen Chartroulette
 .graphs
 %script{ :type => "text/javascript", :src => "/js/chartroulette.js" }
 %script{ :type => "text/javascript", :src => "/js/render-common.js" }
