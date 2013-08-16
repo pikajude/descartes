@@ -27,7 +27,7 @@ module Descartes
     require 'descartes/routes/cats'
 
     get '/' do
-      haml :index
+      haml :'dashboards/index'
     end
   end
 end
