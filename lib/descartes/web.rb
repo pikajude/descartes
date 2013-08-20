@@ -25,10 +25,10 @@ module Descartes
     require 'descartes/routes/favorites'
     require 'descartes/routes/chartroulette'
     require 'descartes/routes/cats'
+    require 'descartes/routes/graphite'
 
     get '/' do
       haml :'dashboards/index'
     end
   end
 end
-
