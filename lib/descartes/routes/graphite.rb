@@ -32,6 +32,8 @@ module Descartes
             expires header_value
           when /last-modified/i
             last_modified header_value
+          when /transfer-encoding/i
+            #ignore
           else
             response_headers[key.to_s] = header_value
         end
