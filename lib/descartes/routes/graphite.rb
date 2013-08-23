@@ -43,11 +43,11 @@ module Descartes
       response
     end
 
-    get '/render/*' do
+    get '/render*' do
       proxy(request.fullpath)
     end
 
-    get '/browser/*' do
+    get '/browser*' do
       proxy(request.fullpath)
     end
   end
