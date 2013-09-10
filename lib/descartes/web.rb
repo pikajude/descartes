@@ -30,5 +30,9 @@ module Descartes
     get '/' do
       haml :'dashboards/index'
     end
+
+    get '/index.html' do
+      haml :'dashboards/index'
+    end
   end
 end
