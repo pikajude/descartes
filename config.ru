@@ -1,4 +1,6 @@
 $stdout.sync = true
+require 'dotenv'
+Dotenv.load
 $:.unshift File.dirname(__FILE__) + '/lib'
 require 'descartes/web'
 require 'descartes/github_auth'
